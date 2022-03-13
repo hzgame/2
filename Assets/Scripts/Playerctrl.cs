@@ -31,4 +31,8 @@ public class Playerctrl : MonoBehaviour
         }
     }
 
+    private void Move(){
+        
+    }
+
 }
