@@ -5,13 +5,15 @@ using UnityEngine;
 public class ItemOnWorld : MonoBehaviour
 {
     public Items thisItem;
-    public Inventory playerInventory;
+    //public Inventory playerInventory;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
             AddItem();
+            Debug.Log("asdasdasdad");
             Destroy(gameObject);
+            
         }
     }
 

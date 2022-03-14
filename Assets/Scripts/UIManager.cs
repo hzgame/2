@@ -30,5 +30,5 @@ public class UIManager : MonoBehaviour
             }
         }
         
-    }
+    }//按E键打开背包，再按关闭
 }

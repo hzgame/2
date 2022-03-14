@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance;//单例模式
     public bool isPaused;
-    public List<Items> itemsInBag=new List<Items>();
-    public List<int>itemsInBagNum=new List<int>();
-    public GameObject[] slots;
+    public List<Items> itemsInBag=new List<Items>();//背包物品的列表
+    public List<int>itemsInBagNum=new List<int>();//背包物品数量的列表，与背包物品的列表编号相对应，即itemsInBag[1]代表的物品的数量是intemsInBagNum[1]，依次类推
+    public GameObject[] slots;//此为背包物品栏
 
     private void Awake()
     {
+        //初始化单例
         if(instance!=null){
             Destroy(gameObject);
         }
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
-    }
+    }//按下esc键就可暂停，再按继续
 
     private void Resume(){
         Time.timeScale=1;
@@ -56,9 +57,9 @@ public class GameManager : MonoBehaviour
             slots[i].transform.GetChild(0).GetComponent<Image>().color=new Color(1,1,1,1);
             slots[i].transform.GetChild(0).GetComponent<Image>().sprite=itemsInBag[i].itemImage;
 
-            slots[i].transform.GetChild(1).GetComponent<TextMesh>().color=new Color(1,1,1,1);
-            slots[i].transform.GetChild(1).GetComponent<TextMesh>().text=itemsInBagNum[i].ToString();
+            slots[i].transform.GetChild(1).GetComponent<Text>().color=new Color(1,1,1,1);
+            slots[i].transform.GetChild(1).GetComponent<Text>().text=itemsInBagNum[i].ToString();
         }
-    }
+    }//显示背包栏中的物品及数量，每捡到一个东西就刷新一次
 
 }

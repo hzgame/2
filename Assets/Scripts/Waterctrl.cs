@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+//此脚本目前尚未投入使用，可忽略
 public class Waterctrl : MonoBehaviour
 {
     void Awake()
