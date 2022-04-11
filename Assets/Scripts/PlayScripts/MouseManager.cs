@@ -32,7 +32,7 @@ public class MouseManager : MonoBehaviour
 
     private void MouseContro()
     {
-        if (Input.GetMouseButtonDown(0) && hitInfo.collider != null)
+        if (Input.GetMouseButtonDown(0) && hitInfo.collider != null&&UIManager.instance.inventoryState==false)
         {
             if (hitInfo.collider.gameObject.CompareTag("Ground"))
                 OnMouseClicked?.Invoke(hitInfo.point);

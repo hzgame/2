@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
             slots[i].transform.GetChild(0).GetComponent<Image>().color=new Color(1,1,1,1);
             slots[i].transform.GetChild(0).GetComponent<Image>().sprite=itemsInBag[i].itemImage;
 
-            slots[i].transform.GetChild(1).GetComponent<Text>().color=new Color(1,1,1,1);
-            slots[i].transform.GetChild(1).GetComponent<Text>().text=itemsInBagNum[i].ToString();
+            slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().color=new Color(1,1,1,1);
+            slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text=itemsInBagNum[i].ToString();
         }
     }//显示背包栏中的物品及数量，每捡到一个东西就刷新一次
 

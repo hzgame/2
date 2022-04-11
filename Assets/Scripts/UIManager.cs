@@ -5,8 +5,16 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject invertoryMenu;
-    [SerializeField]
-    private bool inventoryState;
+    public bool inventoryState;
+    public static UIManager instance;
+
+    private void Awake()
+    {
+        if(instance!=null){
+            Destroy(gameObject);
+        }
+        instance=this;
+    }
 
     private void Start()
     {
