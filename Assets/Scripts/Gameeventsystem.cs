@@ -7,6 +7,7 @@ public class Gameeventsystem : MonoBehaviour
 {
     public static Gameeventsystem instance;
     public event Action spellingComplete;
+    public bool isSpellingComplete;
 
     void Awake()
     {
@@ -17,11 +18,22 @@ public class Gameeventsystem : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        GiveItem();
+    }
+
     public void GiveItem()
     {
-        if (spellingComplete != null)
-        {
-            spellingComplete();
+        //按k模拟汉字拼成事件
+        if(Input.GetKeyDown(KeyCode.K)){
+            isSpellingComplete=true;
+        
+            if (spellingComplete != null)
+            {
+                spellingComplete();
+                Debug.Log("bridge is appear");
+            }
         }
 
     }

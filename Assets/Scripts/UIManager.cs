@@ -22,12 +22,13 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        invertoryctrl();
+        
     }
 
-    private void invertoryctrl()
+    public void invertoryctrl()
     {
-        if(Input.GetKeyDown(KeyCode.E)){
+        //按E键打开背包，再按关闭
+        /*if(Input.GetKeyDown(KeyCode.E)){
             if(GameManager.instance.isPaused==false&&inventoryState==false){
                 invertoryMenu.gameObject.SetActive(true);
                 inventoryState=true;
@@ -38,5 +39,18 @@ public class UIManager : MonoBehaviour
             }
         }
         
-    }//按E键打开背包，再按关闭
+    }*/
+    //点击按钮打开背包
+     if(GameManager.instance.isPaused==false&&inventoryState==false){
+                invertoryMenu.gameObject.SetActive(true);
+                inventoryState=true;
+                Debug.Log("bag is open");
+            }
+            else{
+                invertoryMenu.gameObject.SetActive(false);
+                inventoryState=false;
+                Debug.Log("bag is close");
+            }
+    }
+
 }
