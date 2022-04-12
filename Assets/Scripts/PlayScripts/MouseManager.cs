@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MouseManager : MonoBehaviour
 {
     public static MouseManager Instance;
+    public Texture2D normal,interact;
     RaycastHit hitInfo;
 
     public event Action<Vector3> OnMouseClicked;
@@ -27,6 +30,11 @@ public class MouseManager : MonoBehaviour
         if (Physics.Raycast(_ray, out hitInfo))
         {
             //change cursor textrue
+            if(hitInfo.collider.gameObject.CompareTag("Interact")){
+                Cursor.SetCursor(interact,new Vector2(20,0),CursorMode.Auto);
+            }else{
+                Cursor.SetCursor(normal,new Vector2(0,0),CursorMode.Auto);
+            }
         }
     }
 
@@ -38,4 +46,6 @@ public class MouseManager : MonoBehaviour
                 OnMouseClicked?.Invoke(hitInfo.point);
         }
     }//鼠标点击地面进行移动
+
+   
 }

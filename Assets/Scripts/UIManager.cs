@@ -5,7 +5,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject invertoryMenu;
-    public bool inventoryState;
+    public GameObject craftMenu;
+    public bool inventoryState,craftState;
     public static UIManager instance;
 
     private void Awake()
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         invertoryMenu.gameObject.SetActive(false);
+        craftMenu.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -43,11 +45,15 @@ public class UIManager : MonoBehaviour
     //点击按钮打开背包
      if(GameManager.instance.isPaused==false&&inventoryState==false){
                 invertoryMenu.gameObject.SetActive(true);
+                craftMenu.gameObject.SetActive(true);
+                craftState=true;
                 inventoryState=true;
                 Debug.Log("bag is open");
             }
             else{
                 invertoryMenu.gameObject.SetActive(false);
+                craftMenu.gameObject.SetActive(false);
+                craftState=false;
                 inventoryState=false;
                 Debug.Log("bag is close");
             }

@@ -40,7 +40,7 @@ public class ItemDrag : MonoBehaviour ,IBeginDragHandler,IDragHandler,IEndDragHa
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-        if(eventData.pointerCurrentRaycast.gameObject!=null){
+        if(eventData.pointerCurrentRaycast.gameObject!=null&&!eventData.pointerCurrentRaycast.gameObject.CompareTag("Crafted")){
             gameObject.GetComponent<Transform>().position=originPos;
             gameObject.GetComponent<Transform>().localScale=originScale;
         }
