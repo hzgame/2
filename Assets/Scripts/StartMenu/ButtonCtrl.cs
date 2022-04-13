@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameObject Settings;
     public void PlayGame(){
         SceneManager.LoadScene(1);
     }
@@ -24,4 +13,9 @@ public class ButtonCtrl : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }
+
+    public void OpenSettings(){
+        Settings.SetActive(true);
+    }
+
 }

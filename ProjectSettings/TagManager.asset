@@ -7,14 +7,15 @@ TagManager:
   - Ground
   - Interact
   - Crafted
+  - house
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - dUI
   - Water
   - UI
-  - 
+  - UII
   - 
   - 
   - 
@@ -43,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1837908677
+    locked: 0
+  - name: Dui
+    uniqueID: 2062186589
     locked: 0

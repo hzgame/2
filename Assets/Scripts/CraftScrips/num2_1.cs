@@ -6,15 +6,17 @@ public class num2_1 : MonoBehaviour
 {
     public bool ifDestroy = false;
     public bool isBeing = false;
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Craft")) isBeing = true;
+        if (collision.tag.Equals("Crafted")) isBeing = true;
+        Debug.Log("1");
     }
 
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Craft"))
+        if (collision.tag.Equals("Crafted"))
         {
+            Debug.Log("2");
             if (ifDestroy)
             {
                 Destroy(collision.gameObject, 0);
@@ -24,10 +26,11 @@ public class num2_1 : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Craft"))
+        if (collision.tag.Equals("Crafted"))
         {
+            Debug.Log("3");
             isBeing = false;
             if (GameObject.Find("slot_left").GetComponent<num1_2>().isBeing) GameObject.Find("slot_left").GetComponent<num1_2>().ifDestroy = true;
             if (GameObject.Find("slot_right").GetComponent<num1_2>().isBeing) GameObject.Find("slot_right").GetComponent<num1_2>().ifDestroy = true;

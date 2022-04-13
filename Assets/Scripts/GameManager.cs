@@ -10,6 +10,17 @@ public class GameManager : MonoBehaviour
     public List<Items> itemsInBag=new List<Items>();//背包物品的列表
     public List<int>itemsInBagNum=new List<int>();//背包物品数量的列表，与背包物品的列表编号相对应，即itemsInBag[1]代表的物品的数量是intemsInBagNum[1]，依次类推
     public GameObject[] slots;//此为背包物品栏
+    public GameObject guo;
+    public GameObject player;
+    public GameObject house;
+    private float _Distance;
+    public float _Dis
+    {
+        get
+        {
+            return _Distance;
+        }
+    }
 
     private void Awake()
     {
@@ -24,10 +35,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DisplayItem();
+        //house = GameObject.Find("Box002");
     }
     private void Update()
     {
         GameState();
+        _Distance=Vector3.Distance(house.transform.position, player.transform.position);
     }
     
     private void GameState(){

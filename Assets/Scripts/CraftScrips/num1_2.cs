@@ -7,79 +7,79 @@ public class num1_2 : MonoBehaviour
     private int id;
     public bool ifDestroy = false;
     public bool isBeing = false;
-    public void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         isBeing = true;
         /*
-        ÍØÕ¹²¿·İ¸ñÊ½£º
+        æ‹“å±•éƒ¨ä»½æ ¼å¼ï¼š
         if (collision.name.Equals("XXX")) id = n;
         */
-        if (collision.name.Equals("1")) id = 1;
-        if (collision.name.Equals("2")) id = 2;
+        if (collision.name.Equals("mu_zi_pang")) id = 1;
+        if (collision.name.Equals("qiao")) id = 2;
         if (collision.name.Equals("3")) id = 3;
         if (collision.name.Equals("4")) id = 4;
-        if (collision.name.Equals("5")) id = 5;//´Ë²¿·ÖÓĞ´ı¸üĞÂ£¬ÍêÉÆ²¿Ê×Ê¶±ğ²¿·Öºó¸üĞÂ
-        if (this.gameObject.name.Equals("slot_up")) //´Ë²¿·ÖÓÃÓÚ¼ì²â²¿Ê×²åÈëÁËÄÄÒ»¸ö¿Õ²Û
+        if (collision.name.Equals("5")) id = 5;//æ­¤éƒ¨åˆ†æœ‰å¾…æ›´æ–°ï¼Œå®Œå–„éƒ¨é¦–è¯†åˆ«éƒ¨åˆ†åæ›´æ–°
+        if (this.gameObject.name.Equals("slot_up")) //æ­¤éƒ¨åˆ†ç”¨äºæ£€æµ‹éƒ¨é¦–æ’å…¥äº†å“ªä¸€ä¸ªç©ºæ§½
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_up = id;//´«µİidÖµ¸ø¹¤×÷Ì¨½Å±¾    
+            CraftMethod_2.instance.slot_up = id;//ä¼ é€’idå€¼ç»™å·¥ä½œå°è„šæœ¬    
         }
         if (this.gameObject.name.Equals("slot_down"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_down = id;
+            CraftMethod_2.instance.slot_down = id;
         }
         if (this.gameObject.name.Equals("slot_left"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_left = id;
+            CraftMethod_2.instance.slot_left = id;
         }
         if (this.gameObject.name.Equals("slot_right"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_right = id;
+            CraftMethod_2.instance.slot_right = id;
         }
-        GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().Craftcount += 1;
-        GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().condition = false;
+        CraftMethod_2.instance.Craftcount += 1;
+        CraftMethod_2.instance.condition = false;
     }
     
-    private void OnTriggerExit(Collider collision)
-    {//²¿Ê×ÒÆ×ßÊ¹Î»ÖÃ¶ÔÓ¦ÊıÖµ¹éÁã
+    private void OnTriggerExit2D(Collider2D collision)
+    {//éƒ¨é¦–ç§»èµ°ä½¿ä½ç½®å¯¹åº”æ•°å€¼å½’é›¶
         isBeing = false;
-        GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().Craftcount -= 1;
-        GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().condition = false;
+        CraftMethod_2.instance.Craftcount -= 1;
+        CraftMethod_2.instance.condition = false;
         if (this.gameObject.name.Equals("slot_up"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_up = 0;  
+            CraftMethod_2.instance.slot_up = 0;  
         }
         if (this.gameObject.name.Equals("slot_down"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_down = 0;
+            CraftMethod_2.instance.slot_down = 0;
         }
         if (this.gameObject.name.Equals("slot_left"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_left = 0;
+            CraftMethod_2.instance.slot_left = 0;
         }
         if (this.gameObject.name.Equals("slot_right"))
         {
-            GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_right = 0;
+            CraftMethod_2.instance.slot_right = 0;
         }
     }
-    private void OnTriggerStay(Collider collision)
-    {//ºÏ³É³É¹¦Ê±£¬¶ÔÓ¦Î»ÖÃµÄ²¿Ê×½ÓÊÕĞÅºÅÖ´ĞĞÏú»Ù
+    private void OnTriggerStay2D(Collider2D collision)
+    {//åˆæˆæˆåŠŸæ—¶ï¼Œå¯¹åº”ä½ç½®çš„éƒ¨é¦–æ¥æ”¶ä¿¡å·æ‰§è¡Œé”€æ¯
         if (ifDestroy)
         {
             if (this.gameObject.name.Equals("slot_up"))
             {
-                GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_up = 0;   
+                CraftMethod_2.instance.slot_up = 0;   
             }
             if (this.gameObject.name.Equals("slot_down"))
             {
-                GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_down = 0;
+                CraftMethod_2.instance.slot_down = 0;
             }
             if (this.gameObject.name.Equals("slot_left"))
             {
-                GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_left = 0;
+                CraftMethod_2.instance.slot_left = 0;
             }
             if (this.gameObject.name.Equals("slot_right"))
             {
-                GameObject.Find("Crafttable_2").GetComponent<CraftMethod_2>().slot_right = 0;
+                CraftMethod_2.instance.slot_right = 0;
             }
             Destroy(collision.gameObject, 0);
             ifDestroy = false;

@@ -18,6 +18,15 @@ public class CraftMethod_2 : MonoBehaviour
     public int slot_right;
     public bool condition = false; //为了让文字只生成一次
 
+    public static CraftMethod_2 instance;
+    private void Awake()
+    {
+        //初始化单例
+        if(instance!=null){
+            Destroy(gameObject);
+        }
+        instance=this;
+    }
     void Update()
     {
         if (!condition)
@@ -29,7 +38,7 @@ public class CraftMethod_2 : MonoBehaviour
                 craft_XXX();
             }
             */
-            if ((slot_up == 1 && slot_down == 2 ) && Craftcount == 2)
+            if ((slot_left == 1 && slot_right == 2 ) && Craftcount == 2)
             {
                 craft_qiao();
             }
@@ -39,8 +48,8 @@ public class CraftMethod_2 : MonoBehaviour
             }
             else
             {
-                if (GameObject.Find("slot01").GetComponent<num2_2>().isBeing) GameObject.Find("slot01").GetComponent<num2_2>().ifDestroy = true;
-                if (GameObject.Find("slot02").GetComponent<num2_2>().isBeing) GameObject.Find("slot02").GetComponent<num2_2>().ifDestroy = true;
+                if (GameObject.Find("slot01").GetComponent<num2_1>().isBeing) GameObject.Find("slot01").GetComponent<num2_2>().ifDestroy = true;
+                if (GameObject.Find("slot02").GetComponent<num2_1>().isBeing) GameObject.Find("slot02").GetComponent<num2_2>().ifDestroy = true;
             }
             condition = true;
         }
@@ -57,6 +66,7 @@ public class CraftMethod_2 : MonoBehaviour
     {
         Vector3 pos = GameObject.Find("slot01").transform.position;
         Instantiate(Target_qiao, pos, transform.rotation);
+        Debug.Log("qiao is created");
     }
 
     private void craft_chuan()

@@ -66,4 +66,5 @@ Shader "Unlit/house"
             ENDCG
         }
     }
+    FallBack "Diffuse"
 }
