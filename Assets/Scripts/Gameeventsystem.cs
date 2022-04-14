@@ -26,14 +26,14 @@ public class Gameeventsystem : MonoBehaviour
     public void GiveItem()
     {
         //按k模拟汉字拼成事件
-        if(Input.GetKeyDown(KeyCode.K)){
-            isSpellingComplete=true;
+        if(isSpellingComplete==true){
         
             if (spellingComplete != null)
             {
                 spellingComplete();
                 Debug.Log("bridge is appear");
             }
+            isSpellingComplete=false;
         }
 
     }

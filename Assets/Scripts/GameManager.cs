@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         for(int i=0;i<itemsInBag.Count;i++){
             slots[i].transform.GetChild(0).GetComponent<Image>().color=new Color(1,1,1,1);
             slots[i].transform.GetChild(0).GetComponent<Image>().sprite=itemsInBag[i].itemImage;
+            slots[i].transform.GetChild(0).GetComponent<Transform>().name=itemsInBag[i].itemName;
 
             slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().color=new Color(1,1,1,1);
             slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text=itemsInBagNum[i].ToString();
