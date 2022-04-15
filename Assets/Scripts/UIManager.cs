@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance=this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -24,6 +26,12 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+        if(inventoryState==false){
+            DestroyImmediate(CraftMethod_2.instance.qiao);
+            DestroyImmediate(CraftMethod_2.instance.chuan);
+            DestroyImmediate(CraftMethod_2.instance.di);
+            DestroyImmediate(CraftMethod_2.instance.guo);
+        }
         
     }
 
@@ -46,6 +54,7 @@ public class UIManager : MonoBehaviour
      if(GameManager.instance.isPaused==false&&inventoryState==false){
                 invertoryMenu.gameObject.SetActive(true);
                 //craftMenu.gameObject.SetActive(true);
+                Debug.Log("bag is open");
                 craftState=true;
                 inventoryState=true;
                 Debug.Log("bag is open");

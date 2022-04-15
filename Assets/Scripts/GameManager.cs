@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,14 +12,24 @@ public class GameManager : MonoBehaviour
     public List<int>itemsInBagNum=new List<int>();//背包物品数量的列表，与背包物品的列表编号相对应，即itemsInBag[1]代表的物品的数量是intemsInBagNum[1]，依次类推
     public GameObject[] slots;//此为背包物品栏
     public GameObject guo;
+    public GameObject di;
     public GameObject player;
     public GameObject house;
-    private float _Distance;
-    public float _Dis
+    public GameObject box;
+    private float _Distance1;
+    public float _Dis1
     {
         get
         {
-            return _Distance;
+            return _Distance1;
+        }
+    }
+    private float _Distance2;
+    public float _Dis2
+    {
+        get
+        {
+            return _Distance2;
         }
     }
 
@@ -29,7 +40,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance=this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -40,7 +50,8 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         GameState();
-        _Distance=Vector3.Distance(house.transform.position, player.transform.position);
+        _Distance1=Vector3.Distance(house.transform.position, player.transform.position);
+        _Distance2=Vector3.Distance(box.transform.position, player.transform.position);
     }
     
     private void GameState(){
@@ -70,10 +81,11 @@ public class GameManager : MonoBehaviour
             slots[i].transform.GetChild(0).GetComponent<Image>().color=new Color(1,1,1,1);
             slots[i].transform.GetChild(0).GetComponent<Image>().sprite=itemsInBag[i].itemImage;
             slots[i].transform.GetChild(0).GetComponent<Transform>().name=itemsInBag[i].itemName;
-
-            slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().color=new Color(1,1,1,1);
-            slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text=itemsInBagNum[i].ToString();
         }
     }//显示背包栏中的物品及数量，每捡到一个东西就刷新一次
+
+    public void Return(){
+        SceneManager.LoadScene(0);
+    }
 
 }

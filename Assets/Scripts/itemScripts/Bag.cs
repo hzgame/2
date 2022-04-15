@@ -9,7 +9,7 @@ public class Bag : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
      public void OnPointerEnter(PointerEventData eventData)
     {
        
-        Cursor.SetCursor(MouseManager.Instance.interact,new Vector2(20,0),CursorMode.Auto);
+        Cursor.SetCursor(MouseManager.Instance.interact,new Vector2(0,0),CursorMode.Auto);
         
     }
 

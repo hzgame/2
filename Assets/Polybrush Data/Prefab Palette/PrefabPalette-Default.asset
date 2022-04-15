@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 9154215057541871321, guid: 2554008d6447a2540b44e55f0c0b576e, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 93.67646
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -31,7 +31,7 @@ MonoBehaviour:
     name: PP_Birch_Tree_05
   - gameObject: {fileID: 2636820298107493410, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 77.95378
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -47,7 +47,7 @@ MonoBehaviour:
     name: PP_Birch_Tree_06
   - gameObject: {fileID: 4032642331417584291, guid: e133dac167ef59c40b7678ba58107c6a, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 81.19748
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -639,7 +639,7 @@ MonoBehaviour:
     name: Tree Type7 01
   - gameObject: {fileID: 118422, guid: 107cc8771223daf48be99527559937ff, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 87.43697
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}

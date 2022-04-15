@@ -17,9 +17,12 @@ public class num1_2 : MonoBehaviour
         */
         if (collision.name.Equals("木字旁")) id = 1;
         if (collision.name.Equals("乔")) id = 2;
-        if (collision.name.Equals("3")) id = 3;
-        if (collision.name.Equals("4")) id = 4;
-        if (collision.name.Equals("5")) id = 5;
+        if (collision.name.Equals("舟")) id = 3;
+        if (collision.name.Equals("沿")) id = 4;
+        if (collision.name.Equals("竹字头")) id = 5;
+        if (collision.name.Equals("由")) id = 6;
+        if (collision.name.Equals("走之")) id = 7;
+        if (collision.name.Equals("寸")) id = 8;
         if (this.gameObject.name.Equals("slot_up")) 
         {
             CraftMethod_2.instance.slot_up = id;
@@ -31,6 +34,7 @@ public class num1_2 : MonoBehaviour
         if (this.gameObject.name.Equals("slot_left"))
         {
             CraftMethod_2.instance.slot_left = id;
+            Debug.Log(CraftMethod_2.instance.slot_left);
         }
         if (this.gameObject.name.Equals("slot_right"))
         {
@@ -63,6 +67,7 @@ public class num1_2 : MonoBehaviour
         if (this.gameObject.name.Equals("slot_outer"))
         {
             CraftMethod_2.instance.slot_outer = id;
+             Debug.Log(CraftMethod_2.instance.slot_outer);
         }
         if (this.gameObject.name.Equals("slot_inner"))
         {

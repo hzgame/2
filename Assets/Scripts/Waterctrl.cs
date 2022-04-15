@@ -12,7 +12,7 @@ public class Waterctrl : MonoBehaviour
 
     void Start()
     {
-        Gameeventsystem.instance.spellingComplete += GiveWater;
+        Gameeventsystem.instance.spellingComplete_qiao += GiveWater;
     }
 
     public void GiveWater()

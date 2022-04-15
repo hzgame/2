@@ -195,10 +195,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.45
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 700
+  m_AngularSpeed: 2000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -246,9 +246,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2953539
-  m_Height: 1.4948964
+  m_Height: 1.5344323
   m_Direction: 1
-  m_Center: {x: -0.159235, y: 0.7658789, z: 0.04541111}
+  m_Center: {x: -0.159235, y: 0.746111, z: 0.045411106}
 --- !u!1 &1263291351355013465
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +589,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3579108319595051804, guid: 71b00fdc4c9bc9c4b80717eced4aa5d2, type: 3}
+  - {fileID: 2100000, guid: 2dbfcdba478b2644c8aa470268291dfa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

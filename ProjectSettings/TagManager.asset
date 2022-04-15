@@ -8,6 +8,9 @@ TagManager:
   - Interact
   - Crafted
   - house
+  - Bouble
+  - Water
+  - box
   layers:
   - Default
   - TransparentFX
